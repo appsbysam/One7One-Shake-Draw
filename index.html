@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Buy a protein shake at One7One and enter the weekly draw.">
+  <title>Win a Free Protein Shake | One7One</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="customer-shell">
+    <section class="promotion-page">
+      <div id="dev-badge" class="dev-badge hidden">DEV TEST MODE</div>
+      <div class="brand-mark" aria-label="One7One Nutrition"><span>ONE</span><strong>7</strong><span>ONE</span><small>NUTRITION</small></div>
+      <div class="prize-heading">
+        <span class="shaker-icon" aria-hidden="true"></span>
+        <h1><span>Win a</span><em>free protein shake!</em></h1>
+      </div>
+      <p class="offer-copy">Buy a protein shake today and enter your details below for your chance to win your next one free.</p>
+
+      <div class="entry-card">
+        <form id="entry-form" class="entry-form" autocomplete="on">
+          <label>FULL NAME
+            <span class="input-wrap"><span aria-hidden="true">●</span><input id="full-name" placeholder="e.g. John Smith" autocomplete="name" maxlength="100" required></span>
+          </label>
+          <label>MOBILE NUMBER
+            <span class="input-wrap"><span aria-hidden="true">●</span><input id="phone" placeholder="e.g. 0412 345 678" inputmode="tel" autocomplete="tel" maxlength="20" required></span>
+          </label>
+          <div class="location-panel"><span class="pin-icon" aria-hidden="true">●</span><p><strong>In-store entry only</strong><br>We need to verify that you’re in-store to enter the draw.</p></div>
+          <label class="consent">
+            <input id="consent" type="checkbox" required>
+            <span>I agree to One7One using these details to administer this promotion.</span>
+          </label>
+          <button id="entry-button" class="primary-button" type="submit">ENTER DRAW</button>
+        </form>
+        <div id="entry-message" class="form-message hidden" role="status" aria-live="polite"></div>
+        <p class="secure-note">🔒 Your details are secure and will not be shared.</p>
+      </div>
+
+      <div class="daily-note"><strong>✓ ONE ENTRY PER DAY</strong><span>Come back tomorrow for another chance!</span></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

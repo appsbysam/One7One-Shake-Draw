@@ -1,4 +1,5 @@
 const SUPABASE_URL = "https://cebgyyairqctbgrocxgl.supabase.co";
+const SUPABASE_URL = "https://cebgyyairqctbgrocxgl.supabase.co";
 const SUPABASE_KEY = "sb_publishable_VFT7GrL1rJtmV0hv0CPrlg_qjZXq4PT";
 let managerToken = "";
 let managerName = "";

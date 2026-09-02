@@ -1,5 +1,13 @@
-const SUPABASE_URL = "https://cebgyyairqctbgrocxgl.supabase.co";
-const SUPABASE_KEY = "sb_publishable_VFT7GrL1rJtmV0hv0CPrlg_qjZXq4PT";
+const params = new URLSearchParams(window.location.search);
+const IS_DEV_TEST = params.get("dev") === "1";
+
+const SUPABASE_URL = IS_DEV_TEST
+  ? "https://anfiyirlukdonwvsichi.supabase.co"
+  : "https://cebgyyairqctbgrocxgl.supabase.co";
+
+const SUPABASE_KEY = IS_DEV_TEST
+  ? "sb_publishable_J-TVz3uwbbL0So9djdJhMg_tZOQxq4d"
+  : "sb_publishable_VFT7GrL1rJtmV0hv0CPrlg_qjZXq4PT";
 
 const el = (id) => document.getElementById(id);
 

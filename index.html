@@ -3,6 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Buy a protein shake at One7One and enter the weekly draw.">
+  <title>Win a Free Protein Shake | One7One</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main id="customer" class="customer-shell">
+    <section class="promotion-page">
+      <div class="brand-mark" aria-label="One7One Nutrition"><span>ONE</span><strong>7</strong><span>ONE</span><small>NUTRITION</small></div>
+      <div class="prize-heading"><span class="shaker-icon" aria-hidden="true">▱</span><h1><span>Win a</span><em>free protein shake!</em></h1></div>
+      <p class="offer-copy">Buy a protein shake today and enter your details below for your chance to win your next one free.</p>
+      <div class="entry-card">
+      <form id="entry-form" class="entry-form">
+        <label>FULL NAME
+          <span class="input-wrap"><span aria-hidden="true">♙</span><input id="full-name" placeholder="e.g. John Smith" autocomplete="name" maxlength="100" required></span>
+        </label>
+        <label>MOBILE NUMBER
+          <span class="input-wrap"><span aria-hidden="true">●</span><input id="phone" placeholder="e.g. 0412 345 678" inputmode="tel" autocomplete="tel" maxlength="20" required></span>
+        </label>
+        <div class="location-panel"><span class="pin-icon">●</span><p><strong>In-store entry only</strong><br>We need to verify that you’re in-store to enter the draw.</p></div>
+        <label class="consent">
+          <input id="consent" type="checkbox" required>
+          <span>I agree to One7One using these details to administer this promotion.</span>
+        </label>
+        <button id="entry-button" class="primary-button" type="submit">ENTER DRAW</button>
+      </form>
+      <div id="entry-message" class="form-message hidden" role="status"></div>
+      <p class="secure-note">▣ &nbsp; Your details are secure and will not be shared.</p>
+      <a class="manager-link" href="?admin=1">Manager access</a>
+      </div>
+      <div class="daily-note"><strong>✓ &nbsp; ONE ENTRY PER DAY</strong><span>Come back tomorrow for another chance!</span></div>
+    </section>
+  </main>
+
+  <main id="admin-login" class="admin-shell hidden">
+    <section class="login-card">
+      <a class="back-link" href="./">← Customer entry</a>
+      <div class="admin-icon">🔒</div>
+      <h1>Manager access</h1>
+      <p>Use your existing 171 Timesheet manager PIN.</p>
+      <form id="login-form" class="entry-form">
+        <label>Manager<select id="manager" required></select></label>
+        <label>Four-digit PIN
+          <input id="pin" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="••••" class="pin-input" required>
+        </label>
+        <button id="login-button" class="primary-button" type="submit">🔒 Sign in</button>
+      </form>
+      <div id="login-message" class="form-message hidden" role="status"></div>
+    </section>
+  </main>
+
+  <main id="dashboard" class="dashboard-shell hidden">
+    <header class="dashboard-header">
+      <div><p class="eyebrow">One7One promotion</p><h1>Weekly shake draw</h1><p id="week-label"></p></div>
+      <button id="sign-out" class="text-button">↪ Sign out</button>
+    </header>
+    <section class="stats-grid">
+      <article><span class="stat-icon">🎉</span><div><strong id="entry-count">0</strong><span>Entries this week</span></div></article>
+      <article><span class="stat-icon">👥</span><div><strong id="customer-count">0</strong><span>Unique customers</span></div></article>
+    </section>
+    <section class="draw-panel">
+      <div><p class="eyebrow">Ready when you are</p><h2>Choose this week’s winner</h2><p>Every accepted daily entry has an equal chance.</p></div>
+      <button id="draw-button" class="draw-button">🏆 Draw winner</button>
+    </section>
+    <div id="draw-message" class="winner-message hidden"></div>
+    <section class="data-grid">
+      <article class="data-card">
+        <div class="section-heading"><div><h2>Current entries</h2><p>Newest first</p></div><span id="entry-badge">0</span></div>
+        <div class="table-wrap"><table><thead><tr><th>Name</th><th>Mobile</th><th>Date</th></tr></thead><tbody id="entries"></tbody></table><p id="entries-empty" class="empty">No entries yet this week.</p></div>
+      </article>
+      <article class="data-card">
+        <div class="section-heading"><div><h2>Draw history</h2><p>Recorded winners</p></div><span>🏆</span></div>
+        <div id="history" class="history-list"><p class="empty">No completed draws yet.</p></div>
+      </article>
+    </section>
+    <p id="signed-in" class="signed-in"></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#f36b25">
   <meta name="description" content="Buy a protein shake at One7One and enter the weekly draw.">
   <title>Win a Free Protein Shake | One7One</title>

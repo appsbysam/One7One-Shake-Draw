@@ -1,13 +1,10 @@
 const params = new URLSearchParams(window.location.search);
 const IS_DEV_TEST = params.get("dev") === "1";
 
-const SUPABASE_URL = IS_DEV_TEST
-  ? "https://anfiyirlukdonwvsichi.supabase.co"
-  : "https://cebgyyairqctbgrocxgl.supabase.co";
-
-const SUPABASE_KEY = IS_DEV_TEST
-  ? "sb_publishable_J-TVz3uwbbL0So9djdJhMg_tZOQxq4d"
-  : "sb_publishable_VFT7GrL1rJtmV0hv0CPrlg_qjZXq4PT";
+/* LIVE and DEV now share the 171 Cafe Timesheet Supabase project.
+   DEV calls are isolated through dev_ RPCs and never touch LIVE promotion tables. */
+const SUPABASE_URL = "https://cebgyyairqctbgrocxgl.supabase.co";
+const SUPABASE_KEY = "sb_publishable_VFT7GrL1rJtmV0hv0CPrlg_qjZXq4PT";
 
 const el = (id) => document.getElementById(id);
 
@@ -30,7 +27,7 @@ async function api(path, options = {}) {
 }
 
 const rpc = (name, body) =>
-  api(`rpc/${name}`, {
+  api(`rpc/${IS_DEV_TEST ? `dev_${name}` : name}`, {
     method: "POST",
     body: JSON.stringify(body)
   });
